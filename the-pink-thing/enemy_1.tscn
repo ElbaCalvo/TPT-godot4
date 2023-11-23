@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://im1ydo1ebdpe"]
+[gd_scene load_steps=50 format=3 uid="uid://im1ydo1ebdpe"]
 
 [ext_resource type="Script" path="res://enemy_1.gd" id="1_1m7ur"]
 [ext_resource type="Texture2D" uid="uid://djcopi8xk1piv" path="res://art/Enemy/two-heads/Attack1.png" id="1_ohrc7"]
@@ -11,10 +11,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38m16"]
 size = Vector2(64, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0mjlv"]
-atlas = ExtResource("1_ohrc7")
-region = Rect2(0, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vm807"]
 atlas = ExtResource("1_ohrc7")
@@ -167,9 +163,6 @@ region = Rect2(480, 0, 96, 96)
 [sub_resource type="SpriteFrames" id="SpriteFrames_3eeri"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0mjlv")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vm807")
 }, {
@@ -331,8 +324,7 @@ shape = SubResource("RectangleShape2D_38m16")
 [node name="TwoHeads" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3eeri")
 animation = &"attack"
-frame = 5
-frame_progress = 0.775458
+frame_progress = 0.430204
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
@@ -367,6 +359,7 @@ position = Vector2(-1, 30)
 target_position = Vector2(0, 30)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 1.25
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]

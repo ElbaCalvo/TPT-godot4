@@ -4,5 +4,5 @@ extends Node2D
 func _ready():
 	$Music.play()
 
-func _process(delta):
+func _process(_delta):
 	pass

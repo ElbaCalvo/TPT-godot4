@@ -5,13 +5,13 @@ class_name Player
 var screen_size # Size of the game window.
 var gravity = 1000
 var body_being_attacked = null
+var jump_force : int = 450
+var attacking : bool = false
+var actual_health = 100
 
 @export var speed :int = 100 # How fast the player will move (pixels/sec).
-@export var jump_force : int = 450
-@export var attacking : bool = false
 @export var damage : int  = 10
-@export var health = 100
-@export var actual_health = 100
+var health = 100
 
 func hit(demage : int):
 	health -= demage
@@ -22,7 +22,7 @@ func hit(demage : int):
 func _ready():
 	add_to_group("player_group")
 
-func _process(delta):
+func _process(_delta):
 	pass
 	
 func _physics_process(delta):
@@ -86,14 +86,13 @@ func die():
 
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemy_group"):
-		if body is Enemy1:
+		if (body is Enemy1) or (body is Enemy2):
 			body_being_attacked = body
 			$Timer.start()
 
 func _on_timer_timeout():
 	if attacking && body_being_attacked!=null:
 		body_being_attacked.hit(damage)
-		$Character.play("hurt")
 		attacked_by_enemy()
 		print("Player hit Enemy.")
 
@@ -105,4 +104,5 @@ func _on_attack_area_body_exited(body):
 
 func attacked_by_enemy():
 	actual_health -= damage
-	#update_health_value()
+	get_node("/root/Main/World/GUI").update_health_value(actual_health)
+	

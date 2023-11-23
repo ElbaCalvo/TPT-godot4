@@ -49,4 +49,4 @@ theme_override_font_sizes/font_size = 18
 theme_override_styles/background = SubResource("StyleBoxFlat_ts8bo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cy4cd")
 step = 10.0
-value = 50.0
+value = 100.0

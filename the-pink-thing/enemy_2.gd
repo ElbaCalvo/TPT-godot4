@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-class_name Enemy1
+class_name Enemy2
 
 @export var speed : int  = 100 # How fast the player will move (pixels/sec).
 @export var damage : int  = 10
@@ -19,7 +19,7 @@ func hit(demage : int):
 
 func _ready():
 	add_to_group("enemy_group")
-	$TwoHeads.play("walk")
+	$Centipede.play("walk")
 	
 func _physics_process(delta):
 	if not is_on_floor(): # Add the gravity.
@@ -29,7 +29,7 @@ func _physics_process(delta):
 		flip()
 	
 	if attacking:
-		$TwoHeads.play("attack")
+		$Centipede.play("attack1")
 		velocity.x = 0
 	else: 
 		if facing_right:
@@ -44,7 +44,7 @@ func _physics_process(delta):
 				attacking = true
 	else:
 		attacking = false
-		$TwoHeads.play("walk")
+		$Centipede.play("walk")
 	
 	if $Attack2.is_colliding():
 		var collider = $Attack2.get_collider()
@@ -73,7 +73,7 @@ func start(pos):
 	$CollisionShape2D.disabled = false
 
 func die():
-	$TwoHeads.play("die")
+	$Centipede.play("die")
 
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("player_group"):
@@ -85,7 +85,7 @@ func _on_timer_timeout():
 	if attacking && body_being_attacked!=null:
 		body_being_attacked.hit(damage)
 		get_node("/root/Main/Player").attacked_by_enemy()
-		print("Enemy1 hit Player.") 
+		print("Enemy2 hit Player.") 
 
 func _on_hit_box_body_exited(body):
 	if body_being_attacked == body:
