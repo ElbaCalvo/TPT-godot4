@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://i2f40j12msbs"]
+
+[ext_resource type="Script" path="res://GUI.gd" id="1_tdouo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts8bo"]
+bg_color = Color(1, 0.580392, 0.709804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cy4cd"]
+bg_color = Color(1, 0.403922, 0.615686, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.101961)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_tdouo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.04
+anchor_right = 0.04
+anchor_bottom = 0.04
+offset_left = -10.84
+offset_top = -0.160002
+offset_right = 220.0
+offset_bottom = 30.008
+
+[node name="HealthBar" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/background = SubResource("StyleBoxFlat_ts8bo")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cy4cd")
+step = 10.0
+value = 50.0
