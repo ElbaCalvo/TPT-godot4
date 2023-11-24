@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clgd0r65mg0m2"
-path="res://.godot/imported/morning_adventures_tileset_16x16.png-30c3f525947b608a9aff6508320d5a45.ctex"
+uid="uid://caw7qbtxcqfg2"
+path="res://.godot/imported/Strawberry.png-d4ae094be471d1c008b31776c5fc3179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/scene/morning_adventures_tileset_16x16.png"
-dest_files=["res://.godot/imported/morning_adventures_tileset_16x16.png-30c3f525947b608a9aff6508320d5a45.ctex"]
+source_file="res://art/Live_and_Coins/Strawberry.png"
+dest_files=["res://.godot/imported/Strawberry.png-d4ae094be471d1c008b31776c5fc3179.ctex"]
 
 [params]
 

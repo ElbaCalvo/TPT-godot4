@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://i2f40j12msbs"]
+[gd_scene load_steps=5 format=3 uid="uid://i2f40j12msbs"]
 
 [ext_resource type="Script" path="res://GUI.gd" id="1_tdouo"]
+[ext_resource type="Texture2D" uid="uid://bj6fkve8xknqy" path="res://art/Live_and_Coins/253889306001212-1816015981.png" id="2_55ksr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts8bo"]
 bg_color = Color(1, 0.580392, 0.709804, 1)
@@ -50,3 +51,20 @@ theme_override_styles/background = SubResource("StyleBoxFlat_ts8bo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cy4cd")
 step = 10.0
 value = 100.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 37.0
+offset_top = 57.0
+offset_right = 144.0
+offset_bottom = 97.0
+
+[node name="DiamondIcon" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_55ksr")
+expand_mode = 2
+
+[node name="DiamondDisplay" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "0"

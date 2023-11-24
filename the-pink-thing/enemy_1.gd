@@ -73,7 +73,7 @@ func start(pos):
 	$CollisionShape2D.disabled = false
 
 func die():
-	$TwoHeads.play("die")
+	$TwoHeads.play("dead")
 
 func _on_hit_box_body_entered(body):
 	if body.is_in_group("player_group"):
@@ -85,7 +85,7 @@ func _on_timer_timeout():
 	if attacking && body_being_attacked!=null:
 		body_being_attacked.hit(damage)
 		get_node("/root/Main/Player").attacked_by_enemy()
-		print("Enemy1 hit Player.") 
+		print("Two Heads hits Player.") 
 
 func _on_hit_box_body_exited(body):
 	if body_being_attacked == body:

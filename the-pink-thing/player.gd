@@ -7,11 +7,11 @@ var gravity = 1000
 var body_being_attacked = null
 var jump_force : int = 450
 var attacking : bool = false
-var actual_health = 100
 
+@export var actual_health = 100
 @export var speed :int = 100 # How fast the player will move (pixels/sec).
 @export var damage : int  = 10
-var health = 100
+@export var health = 100
 
 func hit(demage : int):
 	health -= demage
@@ -83,7 +83,7 @@ func start(pos):
 	
 func die():
 	$Character.play("death")
-
+	
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemy_group"):
 		if (body is Enemy1) or (body is Enemy2):
@@ -94,7 +94,7 @@ func _on_timer_timeout():
 	if attacking && body_being_attacked!=null:
 		body_being_attacked.hit(damage)
 		attacked_by_enemy()
-		print("Player hit Enemy.")
+		print("Player hits an Enemy.")
 
 func _on_attack_area_body_exited(body):
 	if body_being_attacked == body:

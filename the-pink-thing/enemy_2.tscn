@@ -296,8 +296,7 @@ shape = SubResource("RectangleShape2D_gp62a")
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_y4dmg")
 animation = &"attack1"
-frame = 1
-frame_progress = 0.657944
+frame_progress = 0.738705
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
@@ -306,6 +305,7 @@ scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_i738s")
 
 [node name="HitBox" type="Area2D" parent="."]
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 light_mask = 4
@@ -317,17 +317,17 @@ shape = SubResource("RectangleShape2D_dhw0x")
 [node name="Attack1" type="RayCast2D" parent="."]
 position = Vector2(17, 47)
 scale = Vector2(2.5, 2.5)
-target_position = Vector2(-34, 0)
+target_position = Vector2(-32, 0)
 collision_mask = 4
 
 [node name="Attack2" type="RayCast2D" parent="."]
 position = Vector2(18, 48)
 scale = Vector2(2.5, 2.5)
-target_position = Vector2(55, 0)
+target_position = Vector2(45, 0)
 collision_mask = 4
 
 [node name="Wall" type="RayCast2D" parent="."]
-position = Vector2(9.53674e-07, 47)
+position = Vector2(-1, 61)
 scale = Vector2(2.5, 2.5)
 target_position = Vector2(-20, 0)
 
@@ -337,6 +337,7 @@ scale = Vector2(2.5, 2.5)
 target_position = Vector2(0, 30)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 1.1
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
 [connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://0mkayfx8vr0g"]
+[gd_scene load_steps=9 format=3 uid="uid://0mkayfx8vr0g"]
 
 [ext_resource type="PackedScene" uid="uid://ea0fuif6edge" path="res://player.tscn" id="1_1jxlv"]
 [ext_resource type="Script" path="res://main.gd" id="1_vwwdr"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://im1ydo1ebdpe" path="res://enemy_1.tscn" id="3_nybjf"]
 [ext_resource type="PackedScene" uid="uid://dk2l70xk3v0s6" path="res://enemy_2.tscn" id="5_0fvws"]
 [ext_resource type="AudioStream" uid="uid://bfh20nx4d778" path="res://art/audio/main_song.mp3" id="5_jsup6"]
+[ext_resource type="PackedScene" uid="uid://6aisqt1365gf" path="res://diamonds.tscn" id="7_f05l0"]
+[ext_resource type="PackedScene" uid="uid://c4krr1utrsx7i" path="res://hearts.tscn" id="8_j7f1x"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vwwdr")
@@ -14,14 +16,20 @@ script = ExtResource("1_vwwdr")
 position = Vector2(-9, 14)
 
 [node name="Player" parent="." instance=ExtResource("1_1jxlv")]
-position = Vector2(405, 648)
+position = Vector2(644, 514)
 
 [node name="Enemy1" parent="." instance=ExtResource("3_nybjf")]
-position = Vector2(243, 610)
+position = Vector2(728, 357)
 scale = Vector2(1.5, 1.5)
 
 [node name="Enemy2" parent="." instance=ExtResource("5_0fvws")]
-position = Vector2(803, 551)
+position = Vector2(269, 508)
+
+[node name="Hearts" parent="." instance=ExtResource("8_j7f1x")]
+position = Vector2(835, 534)
+
+[node name="Diamonds" parent="." instance=ExtResource("7_f05l0")]
+position = Vector2(791, 534)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_jsup6")
