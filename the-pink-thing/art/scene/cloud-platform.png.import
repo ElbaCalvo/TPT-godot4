@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwg61rhxpexd7"
-path="res://.godot/imported/Cherries.png-1ba9bcf9fc4e6b37f45403a96e9bfce6.ctex"
+uid="uid://d1linomld7d6u"
+path="res://.godot/imported/cloud-platform.png-231426681f1e319b73ad4ce1da44515d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Live_and_Coins/Cherries.png"
-dest_files=["res://.godot/imported/Cherries.png-1ba9bcf9fc4e6b37f45403a96e9bfce6.ctex"]
+source_file="res://art/scene/cloud-platform.png"
+dest_files=["res://.godot/imported/cloud-platform.png-231426681f1e319b73ad4ce1da44515d.ctex"]
 
 [params]
 

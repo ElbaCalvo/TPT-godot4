@@ -125,7 +125,6 @@ script = ExtResource("1_ifmrv")
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_gmpel")
 animation = &"collected"
-frame_progress = 0.642738
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 5

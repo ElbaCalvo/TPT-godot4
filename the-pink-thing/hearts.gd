@@ -5,7 +5,7 @@ func _ready():
 	
 func _on_area_2d_area_entered(area):	
 	if area.get_parent() is Player:
-		var player = get_node("/root/Main/Player")
+		var player = get_node("/root/Main/World1/Player")
 		if (player.actual_health < 100) or (player.health < 100):
 			player.actual_health += 10
 			player.health += 10
@@ -15,8 +15,7 @@ func _on_area_2d_area_entered(area):
 		queue_free()
 		
 func update_ui(actual_health):
-	var gui = get_node("/root/Main/World/GUI")
-	var player = get_node("/root/Main/Player")
+	var gui = get_node("/root/Main/World1/GUI")
+	var player = get_node("/root/Main/World1/Player")
 	
 	gui.update_health_value(player.actual_health)
-	print("touching heart")

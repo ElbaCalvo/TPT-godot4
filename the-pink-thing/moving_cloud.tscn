@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://chsnf8uo3cedj"]
+
+[ext_resource type="Texture2D" uid="uid://d1linomld7d6u" path="res://art/scene/cloud-platform.png" id="1_ot5a8"]
+[ext_resource type="Script" path="res://moving_cloud.gd" id="1_u2or7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oqh66"]
+radius = 41.0
+height = 380.0
+
+[sub_resource type="Curve2D" id="Curve2D_ghesc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 1, 0, 0, 0, 0, 129, -1, 0, 0, 0, 0, 250, -1, 0, 0, 0, 0, 356, 1, 0, 0, 0, 0, 468, -1, 0, 0, 0, 0, 583, -2, 0, 0, 0, 0, 676, -1, 0, 0, 0, 0, 769, 2, 0, 0, 0, 0, 863, 1, 0, 0, 0, 0, 951, -1, 0, 0, 0, 0, 1034, -1)
+}
+point_count = 11
+
+[sub_resource type="Animation" id="Animation_urvoa"]
+resource_name = "movement"
+length = 11.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9, 5.6, 6.3, 7, 7.7, 8.4, 9.1, 9.8, 10.5, 11.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(128, 0), Vector2(256, 0), Vector2(384, 0), Vector2(512, 0), Vector2(640, 0), Vector2(768, 0), Vector2(896, 0), Vector2(1024, 0), Vector2(896, 0), Vector2(768, 0), Vector2(640, 0), Vector2(512, 0), Vector2(384, 0), Vector2(256, 0), Vector2(128, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_feihl"]
+_data = {
+"movement": SubResource("Animation_urvoa")
+}
+
+[node name="MovingCloud" type="Node2D"]
+script = ExtResource("1_u2or7")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ot5a8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_oqh66")
+
+[node name="Path2D" type="Path2D" parent="AnimatableBody2D"]
+curve = SubResource("Curve2D_ghesc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D/Path2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_feihl")
+}

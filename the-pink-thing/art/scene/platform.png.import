@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caw7qbtxcqfg2"
-path="res://.godot/imported/Strawberry.png-d4ae094be471d1c008b31776c5fc3179.ctex"
+uid="uid://bx26uax855pbo"
+path="res://.godot/imported/platform.png-e7e0803a3c07cadc76373963ec169df0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Live_and_Coins/Strawberry.png"
-dest_files=["res://.godot/imported/Strawberry.png-d4ae094be471d1c008b31776c5fc3179.ctex"]
+source_file="res://art/scene/platform.png"
+dest_files=["res://.godot/imported/platform.png-e7e0803a3c07cadc76373963ec169df0.ctex"]
 
 [params]
 

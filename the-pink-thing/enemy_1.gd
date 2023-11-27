@@ -33,9 +33,9 @@ func _physics_process(delta):
 		velocity.x = 0
 	else: 
 		if facing_right:
-			velocity.x = speed
-		else:
 			velocity.x = -speed
+		else:
+			velocity.x = speed
 	
 	if $Attack1.is_colliding():
 		var collider = $Attack1.get_collider()
@@ -84,7 +84,7 @@ func _on_hit_box_body_entered(body):
 func _on_timer_timeout():
 	if attacking && body_being_attacked!=null:
 		body_being_attacked.hit(damage)
-		get_node("/root/Main/Player").attacked_by_enemy()
+		get_node("/root/Main/World1/Player").attacked_by_enemy()
 		print("Two Heads hits Player.") 
 
 func _on_hit_box_body_exited(body):

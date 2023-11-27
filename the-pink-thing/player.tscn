@@ -1,8 +1,7 @@
-[gd_scene load_steps=77 format=3 uid="uid://ea0fuif6edge"]
+[gd_scene load_steps=76 format=3 uid="uid://ea0fuif6edge"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_qyclk"]
 [ext_resource type="Texture2D" uid="uid://ckn2h4ofavqr0" path="res://art/Pink_Monster/Pink_Monster_Climb.png" id="2_1nexa"]
-[ext_resource type="Texture2D" uid="uid://c7r3f8amtsolo" path="res://art/Pink_Monster/Pink_Monster_Attack1.png" id="2_5bjxy"]
 [ext_resource type="Texture2D" uid="uid://bxwkg8apd2nmn" path="res://art/Pink_Monster/Pink_Monster_Death.png" id="3_4u30o"]
 [ext_resource type="Texture2D" uid="uid://cd5su83jw0r04" path="res://art/Pink_Monster/Pink_Monster_Attack2.png" id="3_r5ns2"]
 [ext_resource type="Texture2D" uid="uid://c8txcarusv0hb" path="res://art/Pink_Monster/Pink_Monster_Hurt.png" id="4_fcimi"]
@@ -16,22 +15,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1h05f"]
 radius = 12.6667
 height = 41.3333
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5klr3"]
-atlas = ExtResource("2_5bjxy")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dcgyr"]
-atlas = ExtResource("2_5bjxy")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kvoqd"]
-atlas = ExtResource("2_5bjxy")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jvb1m"]
-atlas = ExtResource("2_5bjxy")
-region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbak4"]
 atlas = ExtResource("3_r5ns2")
@@ -56,6 +39,22 @@ region = Rect2(128, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_oy0xh"]
 atlas = ExtResource("3_r5ns2")
 region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xexxp"]
+atlas = ExtResource("2_1nexa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5jah"]
+atlas = ExtResource("2_1nexa")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o3ou"]
+atlas = ExtResource("2_1nexa")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03hl8"]
+atlas = ExtResource("2_1nexa")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tg7d"]
 atlas = ExtResource("2_1nexa")
@@ -261,23 +260,6 @@ region = Rect2(160, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5klr3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dcgyr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kvoqd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jvb1m")
-}],
-"loop": true,
-"name": &"attack1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_nbak4")
 }, {
 "duration": 1.0,
@@ -296,7 +278,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_oy0xh")
 }],
 "loop": true,
-"name": &"attack2",
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xexxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5jah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1o3ou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03hl8")
+}],
+"loop": true,
+"name": &"climb_down",
 "speed": 5.0
 }, {
 "frames": [{
@@ -313,7 +312,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_d41ev")
 }],
 "loop": true,
-"name": &"climb",
+"name": &"climb_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -520,7 +519,7 @@ light_mask = 4
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_g7l0a")
-animation = &"hurt"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 3)
