@@ -14,7 +14,7 @@ point_count = 10
 
 [sub_resource type="Animation" id="Animation_uwoq8"]
 resource_name = "movement"
-length = 11.2
+length = 19.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -22,7 +22,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9, 5.6, 6.3, 7, 7.7, 8.4, 9.1, 9.8, 10.5, 11.2),
+"times": PackedFloat32Array(0, 1.5, 3, 3.7, 4.5, 5.3, 6.1, 7.7, 9.2, 10.7, 12.2, 13, 13.8, 14.6, 16.2, 17.7, 19.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(128, 0), Vector2(256, 0), Vector2(384, 0), Vector2(512, 0), Vector2(640, 0), Vector2(768, 0), Vector2(896, 0), Vector2(1024, 0), Vector2(896, 0), Vector2(768, 0), Vector2(640, 0), Vector2(512, 0), Vector2(384, 0), Vector2(256, 0), Vector2(128, 0), Vector2(0, 0)]

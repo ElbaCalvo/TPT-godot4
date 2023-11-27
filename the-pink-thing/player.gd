@@ -46,7 +46,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("climb_up"):
 			$Character.play("climb_up")
 			velocity.y = -speed
-		if Input.is_action_just_pressed("climb_down"):
+		if Input.is_action_pressed("climb_down"):
 			$Character.play("climb_down")
 			velocity.y = speed
 

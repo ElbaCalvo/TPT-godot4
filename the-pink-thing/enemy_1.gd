@@ -33,9 +33,9 @@ func _physics_process(delta):
 		velocity.x = 0
 	else: 
 		if facing_right:
-			velocity.x = -speed
-		else:
 			velocity.x = speed
+		else:
+			velocity.x = -speed
 	
 	if $Attack1.is_colliding():
 		var collider = $Attack1.get_collider()
