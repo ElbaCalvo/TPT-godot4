@@ -12,10 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dinlbmey5jupj" path="res://art/Pink_Monster/Pink_Monster_Throw.png" id="9_y64rn"]
 [ext_resource type="Texture2D" uid="uid://ck4o6pdvls5ty" path="res://art/Pink_Monster/Pink_Monster_Walk.png" id="10_drn4r"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1h05f"]
-radius = 12.6667
-height = 41.3333
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbak4"]
 atlas = ExtResource("3_r5ns2")
 region = Rect2(0, 0, 32, 32)
@@ -494,12 +490,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1h05f"]
+radius = 8.66667
+height = 28.8
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cnigs"]
-radius = 13.6667
-height = 42.0
+radius = 7.66666
+height = 28.8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yj7n1"]
-size = Vector2(26.6667, 40.6667)
+size = Vector2(15.3334, 27.9334)
 
 [node name="Player" type="CharacterBody2D" groups=["player_group"]]
 position = Vector2(182, 470)
@@ -507,26 +507,29 @@ scale = Vector2(1.5, 1.5)
 collision_layer = 4
 script = ExtResource("1_qyclk")
 
+[node name="Character" type="AnimatedSprite2D" parent="." groups=["player_group"]]
+light_mask = 4
+texture_filter = 1
+scale = Vector2(1.25, 1.25)
+sprite_frames = SubResource("SpriteFrames_g7l0a")
+animation = &"attack"
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 light_mask = 2
-position = Vector2(-0.666664, 3.33334)
+position = Vector2(-1.33334, 2)
+scale = Vector2(1.25, 1.25)
 shape = SubResource("CapsuleShape2D_1h05f")
 
-[node name="Character" type="AnimatedSprite2D" parent="." groups=["player_group"]]
-light_mask = 4
-texture_filter = 1
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_g7l0a")
-animation = &"attack"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 3)
+position = Vector2(-1.33334, 2)
+scale = Vector2(1.25, 1.25)
 shape = SubResource("CapsuleShape2D_cnigs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.15, 1.15)
+offset = Vector2(0, -40)
+zoom = Vector2(1.5, 1.5)
 
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -534,7 +537,8 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 light_mask = 2
-position = Vector2(25.3333, 3.66666)
+position = Vector2(15.6667, 2.54166)
+scale = Vector2(1.25, 1.25)
 shape = SubResource("RectangleShape2D_yj7n1")
 
 [node name="Timer" type="Timer" parent="."]

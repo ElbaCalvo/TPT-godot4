@@ -355,7 +355,7 @@ collision_mask = 4
 [node name="Wall" type="RayCast2D" parent="."]
 position = Vector2(23, 62)
 scale = Vector2(1.7, 1.7)
-target_position = Vector2(-37.0588, 0)
+target_position = Vector2(-35.294, 0)
 
 [node name="Floor" type="RayCast2D" parent="."]
 position = Vector2(-1.19209e-07, 48)

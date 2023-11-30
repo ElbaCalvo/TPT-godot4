@@ -3,7 +3,7 @@ var healthy: int
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	
-func _on_area_2d_area_entered(area):	
+func _on_area_2d_area_entered(area):
 	if area.get_parent() is Player:
 		var player = get_node("/root/Main/World1/Player")
 		if (player.actual_health < 100) or (player.health < 100):
