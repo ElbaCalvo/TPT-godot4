@@ -53,6 +53,8 @@ func _physics_process(delta):
 			
 	if !$Floor.is_colliding() && is_on_floor():
 		flip()
+	
+	#if
 
 	move_and_slide()
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfam2esycdjnl"
-path="res://.godot/imported/IdleSpikes.png-bf385415f9ec970a2f76bb26033fa8fc.ctex"
+uid="uid://cvjnmta0hnaiw"
+path="res://.godot/imported/door.png-04d59640186a495ee7f5c177e49e8843.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Live_and_Coins/IdleSpikes.png"
-dest_files=["res://.godot/imported/IdleSpikes.png-bf385415f9ec970a2f76bb26033fa8fc.ctex"]
+source_file="res://art/Live_and_Coins/door.png"
+dest_files=["res://.godot/imported/door.png-04d59640186a495ee7f5c177e49e8843.ctex"]
 
 [params]
 

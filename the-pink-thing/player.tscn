@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://ea0fuif6edge"]
+[gd_scene load_steps=77 format=3 uid="uid://ea0fuif6edge"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_qyclk"]
 [ext_resource type="Texture2D" uid="uid://ckn2h4ofavqr0" path="res://art/Pink_Monster/Pink_Monster_Climb.png" id="2_1nexa"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bnw6j4eo5a685" path="res://art/Pink_Monster/Pink_Monster_Run.png" id="8_yrokg"]
 [ext_resource type="Texture2D" uid="uid://dinlbmey5jupj" path="res://art/Pink_Monster/Pink_Monster_Throw.png" id="9_y64rn"]
 [ext_resource type="Texture2D" uid="uid://ck4o6pdvls5ty" path="res://art/Pink_Monster/Pink_Monster_Walk.png" id="10_drn4r"]
+[ext_resource type="AudioStream" uid="uid://b6iyvmmhpa40h" path="res://art/audio/jump.mp3" id="12_rvo6n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbak4"]
 atlas = ExtResource("3_r5ns2")
@@ -542,6 +543,9 @@ scale = Vector2(1.25, 1.25)
 shape = SubResource("RectangleShape2D_yj7n1")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_rvo6n")
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]

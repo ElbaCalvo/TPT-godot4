@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://6aisqt1365gf"]
+[gd_scene load_steps=23 format=3 uid="uid://6aisqt1365gf"]
 
 [ext_resource type="Script" path="res://diamonds.gd" id="1_ig3q5"]
 [ext_resource type="Texture2D" uid="uid://bwqlgbhwcrqwr" path="res://art/Live_and_Coins/Big Diamond Idle (18x14).png" id="1_jt866"]
 [ext_resource type="Texture2D" uid="uid://omi4c43a3qg3" path="res://art/Live_and_Coins/Collected.png" id="2_ym4yf"]
+[ext_resource type="AudioStream" uid="uid://d2lusk0580r2v" path="res://art/audio/collectable.mp3" id="4_6ot84"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_klsxs"]
 atlas = ExtResource("2_ym4yf")
@@ -149,5 +150,8 @@ collision_mask = 5
 visibility_layer = 5
 position = Vector2(5, -1)
 shape = SubResource("CircleShape2D_0483m")
+
+[node name="Diamonds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6ot84")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

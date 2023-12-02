@@ -35,9 +35,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("walk_right"):
 		$Character.flip_h = direction < 0 # Flip the Character's direction.
 		$AttackArea.scale.x = abs($AttackArea.scale.x) * 1 # Flip AttackArea's direction.
-	
-	#if not is_on_floor(): # Add the gravity.
-		#velocity.y += gravity * delta
 
 	if climbing == false and !is_on_floor():
 		velocity.y += gravity * delta # Add the gravity.
@@ -52,6 +49,7 @@ func _physics_process(delta):
 
 	# Jump if on the floor and jump key is pressed.
 	if Input.is_action_pressed("jump") && is_on_floor():
+		$Jump.play()
 		velocity.y = -jump_force
 	
 	if direction:
@@ -59,7 +57,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 	
-	if position.y >= 1250:
+	if position.y >= 1400:
 		queue_free()
 	
 	update_animations()

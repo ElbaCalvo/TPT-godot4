@@ -10,6 +10,7 @@ func _on_area_2d_area_entered(area):
 			player.actual_health += 10
 			player.health += 10
 		$AnimatedSprite2D.play("collected")
+		$Hearts.play()
 		await get_tree().create_timer(0.75).timeout
 		update_ui(player.actual_health)
 		queue_free()

@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://gy3is6syw81b"]
+
+[ext_resource type="Script" path="res://door.gd" id="1_o12cm"]
+[ext_resource type="Texture2D" uid="uid://cvjnmta0hnaiw" path="res://art/Live_and_Coins/door.png" id="1_qrl6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdi70"]
+size = Vector2(24, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj8dx"]
+size = Vector2(96, 100)
+
+[sub_resource type="Curve2D" id="Curve2D_usrys"]
+
+[sub_resource type="Animation" id="Animation_o60ep"]
+resource_name = "move"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, -20), Vector2(0, -30), Vector2(0, -40), Vector2(0, -50), Vector2(0, -60), Vector2(0, -70), Vector2(0, -80), Vector2(0, -90), Vector2(0, -100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38e35"]
+_data = {
+"move": SubResource("Animation_o60ep")
+}
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_o12cm")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_qrl6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(-1, -0.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_kdi70")
+
+[node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_nj8dx")
+
+[node name="Path2D" type="Path2D" parent="AnimatableBody2D"]
+curve = SubResource("Curve2D_usrys")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D/Path2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_38e35")
+}
+
+[connection signal="area_entered" from="AnimatableBody2D/Area2D" to="." method="_on_area_2d_area_entered"]

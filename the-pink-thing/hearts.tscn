@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://c4krr1utrsx7i"]
+[gd_scene load_steps=21 format=3 uid="uid://c4krr1utrsx7i"]
 
 [ext_resource type="Texture2D" uid="uid://da5ry2h73umub" path="res://art/Live_and_Coins/Big Heart Idle (18x14).png" id="1_7cet7"]
 [ext_resource type="Script" path="res://hearts.gd" id="1_ifmrv"]
 [ext_resource type="Texture2D" uid="uid://omi4c43a3qg3" path="res://art/Live_and_Coins/Collected.png" id="2_yvn3q"]
+[ext_resource type="AudioStream" uid="uid://d2lusk0580r2v" path="res://art/audio/collectable.mp3" id="4_37dtl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxekw"]
 atlas = ExtResource("2_yvn3q")
@@ -134,5 +135,8 @@ light_mask = 4
 visibility_layer = 5
 position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_b0mr1")
+
+[node name="Hearts" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_37dtl")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
