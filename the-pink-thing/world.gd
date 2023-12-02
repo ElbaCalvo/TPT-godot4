@@ -12,7 +12,13 @@ func _ready():
 		add_child(enemy1_instance)
 		enemy1_instance.global_position = respawn.global_position
 		enemy1_instance.scale.x = 1
-
+		
+	for respawn in $Enemy2Spawner.get_children():
+		var enemy2_instance = enemy2.instantiate()
+		add_child(enemy2_instance)
+		enemy2_instance.global_position = respawn.global_position
+		enemy2_instance.scale.x = 1
+		
 	for respawn in $DiamondSpawner.get_children():
 		var diamond_instance = diamond.instantiate()
 		add_child(diamond_instance)

@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bol0ngjb7udv5" path="res://art/Enemy/centipede/Centipede_walk.png" id="8_ckh4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gp62a"]
-size = Vector2(56.4, 30.8)
+size = Vector2(63.5556, 34.6667)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y8ctg"]
 atlas = ExtResource("2_2wfp8")
@@ -275,10 +275,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i738s"]
-size = Vector2(42.8, 33.2)
+size = Vector2(44, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhw0x"]
-size = Vector2(38, 28.8)
+size = Vector2(30.8, 30.4)
 
 [node name="Enemy2" type="CharacterBody2D" groups=["enemy_group"]]
 collision_layer = 8
@@ -288,19 +288,19 @@ script = ExtResource("1_8gg48")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 light_mask = 8
-position = Vector2(16.5, 47.5)
-scale = Vector2(2.5, 2.5)
+position = Vector2(20.5, 43)
+scale = Vector2(2.25, 2.25)
 shape = SubResource("RectangleShape2D_gp62a")
 
 [node name="Centipede" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2.25, 2.25)
 sprite_frames = SubResource("SpriteFrames_y4dmg")
-animation = &"attack1"
-frame_progress = 0.738705
+animation = &"idle"
+frame_progress = 0.823141
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
-position = Vector2(35.5, 47.5)
+position = Vector2(36, 43.5)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_i738s")
 
@@ -310,31 +310,31 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 light_mask = 4
 visibility_layer = 5
-position = Vector2(-34.5, 47)
+position = Vector2(-25.5, 42)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_dhw0x")
 
 [node name="Attack1" type="RayCast2D" parent="."]
-position = Vector2(17, 47)
-scale = Vector2(2.5, 2.5)
-target_position = Vector2(-32, 0)
+position = Vector2(14, 52)
+scale = Vector2(1.5, 1.5)
+target_position = Vector2(-49.333, 0)
 collision_mask = 4
 
 [node name="Attack2" type="RayCast2D" parent="."]
-position = Vector2(18, 48)
-scale = Vector2(2.5, 2.5)
-target_position = Vector2(45, 0)
+position = Vector2(14, 51)
+scale = Vector2(1.5, 1.5)
+target_position = Vector2(70, 0)
 collision_mask = 4
 
 [node name="Wall" type="RayCast2D" parent="."]
-position = Vector2(-1, 61)
-scale = Vector2(2.5, 2.5)
-target_position = Vector2(-20, 0)
+position = Vector2(14, 52)
+scale = Vector2(1.5, 1.5)
+target_position = Vector2(-34, 0)
 
 [node name="Floor" type="RayCast2D" parent="."]
-position = Vector2(-17, 48)
-scale = Vector2(2.5, 2.5)
-target_position = Vector2(0, 30)
+position = Vector2(-17, 52)
+scale = Vector2(1.5, 1.5)
+target_position = Vector2(0, 27.3333)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.1

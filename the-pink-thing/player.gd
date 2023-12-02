@@ -101,7 +101,10 @@ func die():
 	
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemy_group"):
-		if (body is Enemy1) or (body is Enemy2):
+		if (body is Enemy1):
+			body_being_attacked = body
+			$Timer.start()
+		elif (body is Enemy2):
 			body_being_attacked = body
 			$Timer.start()
 
@@ -109,7 +112,7 @@ func _on_timer_timeout():
 	if attacking && body_being_attacked!=null:
 		body_being_attacked.hit(damage)
 		attacked_by_enemy()
-		print("Player hits an Enemy.")
+		print("Player hits Enemy.")
 
 func _on_attack_area_body_exited(body):
 	if body_being_attacked == body:
