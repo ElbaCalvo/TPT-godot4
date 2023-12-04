@@ -7,6 +7,7 @@ var gravity = 1000
 var body_being_attacked = null
 var jump_force : int = 450
 var attacking : bool = false
+var can_move : bool = true
 
 @export var actual_health = 100
 @export var speed :int = 100 # How fast the player will move (pixels/sec).
@@ -27,47 +28,51 @@ func _process(_delta):
 	pass
 	
 func _physics_process(delta):
-	var direction = Input.get_axis("walk_left","walk_right") # Get input direction
 	
-	if Input.is_action_pressed("walk_left"):
-		$Character.flip_h = direction < 0 # Flip the Character's direction.
-		$AttackArea.scale.x = abs($AttackArea.scale.x) * -1 # Flip AttackArea's direction.
-	if Input.is_action_pressed("walk_right"):
-		$Character.flip_h = direction < 0 # Flip the Character's direction.
-		$AttackArea.scale.x = abs($AttackArea.scale.x) * 1 # Flip AttackArea's direction.
+	if can_move:
+		var direction = Input.get_axis("walk_left","walk_right") # Get input direction
+		
+		if Input.is_action_pressed("walk_left"):
+			$Character.flip_h = direction < 0 # Flip the Character's direction.
+			$AttackArea.scale.x = abs($AttackArea.scale.x) * -1 # Flip AttackArea's direction.
+		if Input.is_action_pressed("walk_right"):
+			$Character.flip_h = direction < 0 # Flip the Character's direction.
+			$AttackArea.scale.x = abs($AttackArea.scale.x) * 1 # Flip AttackArea's direction.
 
-	if climbing == false and !is_on_floor():
-		velocity.y += gravity * delta # Add the gravity.
-	elif climbing == true:
-		velocity.y = 0
-		if Input.is_action_pressed("climb_up"):
-			$Character.play("climb_up")
-			velocity.y = -speed
-		if Input.is_action_pressed("climb_down"):
-			$Character.play("climb_down")
-			velocity.y = speed
+		if climbing == false and !is_on_floor():
+			velocity.y += gravity * delta # Add the gravity.
+		elif climbing == true:
+			velocity.y = 0
+			if Input.is_action_pressed("climb_up"):
+				$Character.play("climb_up")
+				velocity.y = -speed
+			if Input.is_action_pressed("climb_down"):
+				$Character.play("climb_down")
+				velocity.y = speed
 
-	# Jump if on the floor and jump key is pressed.
-	if Input.is_action_pressed("jump") && is_on_floor():
-		$Jump.play()
-		velocity.y = -jump_force
-	
-	if direction:
-		velocity.x = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-	
-	if position.y >= 1400:
-		queue_free()
-	
-	update_animations()
-	move_and_slide()
-	
-	if Input.is_action_pressed("attack") && is_on_floor():
-		attack()
-	else:
-		attacking = false
-
+		# Jump if on the floor and jump key is pressed.
+		if Input.is_action_pressed("jump") && is_on_floor():
+			$Jump.play()
+			velocity.y = -jump_force
+		
+		if direction:
+			velocity.x = direction * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
+		
+		if position.y >= 1400:
+			queue_free()
+		
+		update_animations()
+		move_and_slide()
+		
+		if Input.is_action_pressed("attack") && is_on_floor():
+			attack()
+		else:
+			attacking = false
+	elif !can_move:
+		$Character.play("idle")
+		
 func update_animations():
 	if !attacking:
 		if velocity.x != 0:
@@ -88,15 +93,15 @@ func update_animations():
 func attack():
 	attacking = true
 	$Character.play("attack")
-	
+		
 func start(pos):
 	position = pos
 	show()
 	$CollisionShape2D.disabled = false
-	
+		
 func die():
 	$Character.play("death")
-	
+		
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemy_group"):
 		if (body is Enemy1):
