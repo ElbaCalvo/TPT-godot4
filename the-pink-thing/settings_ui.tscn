@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://cc58ttdu7ko1k"]
+
+[ext_resource type="Script" path="res://settings_ui.gd" id="1_chn1b"]
+[ext_resource type="FontFile" uid="uid://cdoe7bssu3s5s" path="res://fonts/PeaberryBase.ttf" id="2_qpugj"]
+[ext_resource type="Texture2D" uid="uid://b7u7nltafj62v" path="res://art/scene/Backgrounds/main_options.png" id="2_ymrvg"]
+[ext_resource type="PackedScene" uid="uid://diamcnf4jxsl5" path="res://settings_tab_ui.tscn" id="4_ihhxo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejl40"]
+bg_color = Color(0, 0, 0, 0.415686)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 7.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgido"]
+bg_color = Color(0, 0, 0, 0.415686)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 7.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdqx6"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 7.0
+expand_margin_bottom = 2.0
+
+[node name="settings_ui" type="CanvasLayer"]
+script = ExtResource("1_chn1b")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ymrvg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_colors/font_outline_color = Color(0.101961, 0.301961, 0.160784, 1)
+theme_override_constants/outline_size = 35
+theme_override_fonts/font = ExtResource("2_qpugj")
+theme_override_font_sizes/font_size = 52
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings_tab_ui" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_ihhxo")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ExitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_qpugj")
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_ejl40")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qgido")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vdqx6")
+text = "EXIT"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="on_exit_pressed"]

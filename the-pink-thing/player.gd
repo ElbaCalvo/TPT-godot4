@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 class_name Player
 
+signal gained_diamonds(int)
+
+var diamonds : int
 var screen_size # Size of the game window.
 var gravity = 1000
 var body_being_attacked = null
@@ -126,4 +129,7 @@ func _on_attack_area_body_exited(body):
 func attacked_by_enemy():
 	actual_health -= damage
 	get_node("/root/Main/World1/GUI").update_health_value(actual_health)
-	
+
+func gain_diamonds(diamonds_gained : int):
+	diamonds += diamonds_gained
+	emit_signal("gained_diamonds", diamonds_gained)

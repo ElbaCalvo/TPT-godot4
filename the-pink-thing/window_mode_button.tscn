@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhgdrmv3025pe"]
+
+[ext_resource type="PackedScene" uid="uid://3h6pw51iwsxy" path="res://option_display_button.tscn" id="1_iwn5r"]
+[ext_resource type="Script" path="res://window_mode_button.gd" id="2_jwq3x"]
+[ext_resource type="FontFile" uid="uid://cdoe7bssu3s5s" path="res://fonts/PeaberryBase.ttf" id="3_qxa27"]
+
+[node name="window_mode_button" instance=ExtResource("1_iwn5r")]
+offset_left = 0.0
+offset_right = 0.0
+script = ExtResource("2_jwq3x")
+
+[node name="Label" parent="HBoxContainer" index="0"]
+theme_override_fonts/font = ExtResource("3_qxa27")
+theme_override_font_sizes/font_size = 35
+text = "Window Mode"

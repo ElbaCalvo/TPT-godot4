@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://0mkayfx8vr0g"]
+[gd_scene load_steps=5 format=3 uid="uid://0mkayfx8vr0g"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_vwwdr"]
 [ext_resource type="PackedScene" uid="uid://cgeiw2th1shyg" path="res://world.tscn" id="2_al1lo"]
+[ext_resource type="PackedScene" uid="uid://dmhuh6vd28j5a" path="res://ui.tscn" id="4_afywj"]
 [ext_resource type="AudioStream" uid="uid://cpkj6o123bjj3" path="res://art/audio/Caketown 1.mp3" id="4_t6fg2"]
 
 [node name="Main" type="Node2D"]
@@ -11,3 +12,5 @@ script = ExtResource("1_vwwdr")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_t6fg2")
+
+[node name="UI" parent="." instance=ExtResource("4_afywj")]

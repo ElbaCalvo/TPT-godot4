@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://diamcnf4jxsl5"]
+
+[ext_resource type="FontFile" uid="uid://cdoe7bssu3s5s" path="res://fonts/PeaberryBase.ttf" id="1_c3hjs"]
+[ext_resource type="PackedScene" uid="uid://dhgdrmv3025pe" path="res://window_mode_button.tscn" id="2_p14qs"]
+[ext_resource type="PackedScene" uid="uid://dljdhmffpp3t5" path="res://resolution_mode_button.tscn" id="3_222ih"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcl1d"]
+
+[node name="settings_tab_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="Window" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_c3hjs")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_lcl1d")
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Window/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Window/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 88
+alignment = 1
+
+[node name="window_mode_button" parent="TabContainer/Window/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_p14qs")]
+layout_mode = 2
+
+[node name="resolution_mode_button" parent="TabContainer/Window/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_222ih")]
+layout_mode = 2
+
+[node name="Audio" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_c3hjs")
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="User" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_c3hjs")
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/User"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/User/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/User/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="window_mode_button" parent="TabContainer/User/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_p14qs")]
+layout_mode = 2

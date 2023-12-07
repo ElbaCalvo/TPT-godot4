@@ -530,7 +530,7 @@ shape = SubResource("CapsuleShape2D_cnigs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -40)
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 10

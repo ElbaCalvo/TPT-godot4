@@ -11234,7 +11234,7 @@ layer_2/tile_data = PackedInt32Array(1507498, 720898, 8, 1507499, 720898, 8, 150
 [node name="GUI" parent="." instance=ExtResource("5_k57n5")]
 
 [node name="Player" parent="." instance=ExtResource("1_ouioa")]
-position = Vector2(9358, 478)
+position = Vector2(90, 406)
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2(1, 0)

@@ -1,0 +1,175 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmhuh6vd28j5a"]
+
+[ext_resource type="Texture2D" uid="uid://b7u7nltafj62v" path="res://art/scene/Backgrounds/main_options.png" id="1_4ih1v"]
+[ext_resource type="Script" path="res://ui.gd" id="1_rgr4s"]
+[ext_resource type="FontFile" uid="uid://bycbjpahsurb3" path="res://fonts/FatPixelFont.ttf" id="2_k5xmk"]
+[ext_resource type="FontFile" uid="uid://cdoe7bssu3s5s" path="res://fonts/PeaberryBase.ttf" id="2_ltawg"]
+[ext_resource type="PackedScene" uid="uid://cc58ttdu7ko1k" path="res://settings_ui.tscn" id="5_etyy6"]
+[ext_resource type="AudioStream" uid="uid://cpkj6o123bjj3" path="res://art/audio/Caketown 1.mp3" id="6_pm6wh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4guv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vwcr"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.894118, 0.894118, 0.894118, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7k7n"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.894118, 0.894118, 0.894118, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kucw"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.894118, 0.894118, 0.894118, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_rgr4s")
+
+[node name="MarginMenu" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginMenu"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginMenu/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("1_4ih1v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginMenu/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="MarginMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.894118, 0.235294, 0.564706, 1)
+theme_override_colors/font_shadow_color = Color(0.898039, 0.568627, 0.772549, 1)
+theme_override_colors/font_outline_color = Color(0.901961, 0.901961, 0.980392, 1)
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 42
+theme_override_fonts/font = ExtResource("2_k5xmk")
+theme_override_font_sizes/font_size = 36
+text = "THE PINK THING"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 37
+
+[node name="HSeparator2" type="HSeparator" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_p4guv")
+
+[node name="HSeparator3" type="HSeparator" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_p4guv")
+
+[node name="NewGame" type="Button" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/font_pressed_color = Color(0.823529, 0, 0.454902, 1)
+theme_override_colors/font_hover_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.545098, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("2_ltawg")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxFlat_0vwcr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v7k7n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1kucw")
+text = "NEW GAME"
+
+[node name="Settings" type="Button" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.862745, 0.854902, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.223529, 0.584314, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.545098, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("2_ltawg")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxFlat_0vwcr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v7k7n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1kucw")
+text = "SETTINGS"
+
+[node name="Quit" type="Button" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.894118, 0.894118, 0.894118, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.223529, 0.584314, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.545098, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/icon_max_width = 0
+theme_override_fonts/font = ExtResource("2_ltawg")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxFlat_0vwcr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v7k7n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1kucw")
+text = "QUIT"
+
+[node name="settings_ui" parent="." instance=ExtResource("5_etyy6")]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_pm6wh")
+autoplay = true
+bus = &"Music"
