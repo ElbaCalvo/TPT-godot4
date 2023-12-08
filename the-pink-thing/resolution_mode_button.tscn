@@ -11,3 +11,5 @@ script = ExtResource("2_rmm6m")
 theme_override_fonts/font = ExtResource("3_j7pqt")
 theme_override_font_sizes/font_size = 35
 text = "Resolution"
+
+[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]

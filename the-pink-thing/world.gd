@@ -7,6 +7,7 @@ const heart : PackedScene = preload("res://hearts.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Main_Music.play()
 	for respawn in $EnemySpawner.get_children():
 		var enemy1_instance = enemy1.instantiate()
 		add_child(enemy1_instance)

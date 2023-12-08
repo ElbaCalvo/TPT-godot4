@@ -13,3 +13,5 @@ script = ExtResource("2_jwq3x")
 theme_override_fonts/font = ExtResource("3_qxa27")
 theme_override_font_sizes/font_size = 35
 text = "Window Mode"
+
+[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="on_window_mode_selected"]

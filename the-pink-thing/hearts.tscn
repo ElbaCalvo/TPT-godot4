@@ -138,5 +138,6 @@ shape = SubResource("CircleShape2D_b0mr1")
 
 [node name="Hearts" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_37dtl")
+bus = &"Sfx"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

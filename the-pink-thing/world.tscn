@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cgeiw2th1shyg"]
+[gd_scene load_steps=39 format=3 uid="uid://cgeiw2th1shyg"]
 
 [ext_resource type="PackedScene" uid="uid://ea0fuif6edge" path="res://player.tscn" id="1_ouioa"]
 [ext_resource type="Script" path="res://world.gd" id="1_rtf1l"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://gy3is6syw81b" path="res://door.tscn" id="21_47sva"]
 [ext_resource type="PackedScene" uid="uid://c0s4hij7jjkhk" path="res://trophy.tscn" id="22_ujl2i"]
 [ext_resource type="PackedScene" uid="uid://cssn2kypnk4rm" path="res://level_transition.tscn" id="22_yvu4i"]
+[ext_resource type="AudioStream" uid="uid://cpkj6o123bjj3" path="res://art/audio/Caketown 1.mp3" id="24_6v2wa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nsbhx"]
 texture = ExtResource("4_m2etl")
@@ -11435,3 +11436,7 @@ position = Vector2(10035, 633)
 
 [node name="Marker2D_8" type="Marker2D" parent="HeartSpawner"]
 position = Vector2(10500, 307)
+
+[node name="Main_Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_6v2wa")
+bus = &"Music"

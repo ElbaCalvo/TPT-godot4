@@ -546,6 +546,7 @@ shape = SubResource("RectangleShape2D_yj7n1")
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_rvo6n")
+bus = &"Sfx"
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]

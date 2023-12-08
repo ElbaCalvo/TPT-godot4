@@ -8,10 +8,12 @@ extends CanvasLayer
 var start_level : Node2D
 
 func _ready():
+	$AudioStreamPlayer2D.play()
 	handle_signals()
 	settings_ui.exit_settings.connect(Callable(on_exit_settings_menu))
 
 func on_new_game_pressed() -> void:
+	$AudioStreamPlayer2D.stop()
 	get_tree().change_scene_to_file("res://world.tscn")
 
 func on_settings_pressed() -> void:
