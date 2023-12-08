@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cswf1plonpig3"]
+
+[ext_resource type="FontFile" uid="uid://cdoe7bssu3s5s" path="res://fonts/PeaberryBase.ttf" id="1_8prfs"]
+[ext_resource type="Script" path="res://username.gd" id="1_uanis"]
+
+[node name="Username" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uanis")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 160
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(264, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8prfs")
+theme_override_font_sizes/font_size = 35
+text = "Username"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+
+[connection signal="text_submitted" from="HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://diamcnf4jxsl5"]
+[gd_scene load_steps=8 format=3 uid="uid://diamcnf4jxsl5"]
 
 [ext_resource type="FontFile" uid="uid://cdoe7bssu3s5s" path="res://fonts/PeaberryBase.ttf" id="1_c3hjs"]
 [ext_resource type="PackedScene" uid="uid://dhgdrmv3025pe" path="res://window_mode_button.tscn" id="2_p14qs"]
 [ext_resource type="PackedScene" uid="uid://dljdhmffpp3t5" path="res://resolution_mode_button.tscn" id="3_222ih"]
 [ext_resource type="PackedScene" uid="uid://dhs1qc5yb85k3" path="res://music_mode_slider.tscn" id="4_0f7g6"]
 [ext_resource type="PackedScene" uid="uid://r25ehxrd22om" path="res://sfx_mode_slider.tscn" id="5_batyj"]
+[ext_resource type="PackedScene" uid="uid://cswf1plonpig3" path="res://username.tscn" id="6_6cony"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcl1d"]
 
@@ -120,5 +121,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="window_mode_button" parent="TabContainer/User/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_p14qs")]
+[node name="Username" parent="TabContainer/User/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_6cony")]
 layout_mode = 2

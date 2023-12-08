@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cgeiw2th1shyg"]
+[gd_scene load_steps=40 format=3 uid="uid://cgeiw2th1shyg"]
 
 [ext_resource type="PackedScene" uid="uid://ea0fuif6edge" path="res://player.tscn" id="1_ouioa"]
 [ext_resource type="Script" path="res://world.gd" id="1_rtf1l"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://c0s4hij7jjkhk" path="res://trophy.tscn" id="22_ujl2i"]
 [ext_resource type="PackedScene" uid="uid://cssn2kypnk4rm" path="res://level_transition.tscn" id="22_yvu4i"]
 [ext_resource type="AudioStream" uid="uid://cpkj6o123bjj3" path="res://art/audio/Caketown 1.mp3" id="24_6v2wa"]
+[ext_resource type="PackedScene" uid="uid://b00o24d2ya4ei" path="res://game_over_screen.tscn" id="25_df1po"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nsbhx"]
 texture = ExtResource("4_m2etl")
@@ -11235,7 +11236,7 @@ layer_2/tile_data = PackedInt32Array(1507498, 720898, 8, 1507499, 720898, 8, 150
 [node name="GUI" parent="." instance=ExtResource("5_k57n5")]
 
 [node name="Player" parent="." instance=ExtResource("1_ouioa")]
-position = Vector2(90, 406)
+position = Vector2(5346, 655)
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2(1, 0)
@@ -11420,7 +11421,7 @@ position = Vector2(394, -114)
 position = Vector2(2808, -188)
 
 [node name="Marker2D_3" type="Marker2D" parent="HeartSpawner"]
-position = Vector2(6195, 741)
+position = Vector2(1454, 431)
 
 [node name="Marker2D_4" type="Marker2D" parent="HeartSpawner"]
 position = Vector2(6620, 199)
@@ -11440,3 +11441,5 @@ position = Vector2(10500, 307)
 [node name="Main_Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("24_6v2wa")
 bus = &"Music"
+
+[node name="game_over_screen" parent="." instance=ExtResource("25_df1po")]

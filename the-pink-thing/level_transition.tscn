@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cssn2kypnk4rm"]
+[gd_scene load_steps=11 format=3 uid="uid://cssn2kypnk4rm"]
 
 [ext_resource type="Script" path="res://level_transition.gd" id="1_us5uj"]
 [ext_resource type="FontFile" uid="uid://bycbjpahsurb3" path="res://fonts/FatPixelFont.ttf" id="2_8mcyy"]
+[ext_resource type="FontFile" uid="uid://cdoe7bssu3s5s" path="res://fonts/PeaberryBase.ttf" id="3_focx3"]
 
 [sub_resource type="Animation" id="Animation_5nsws"]
 length = 0.001
@@ -68,6 +69,45 @@ _data = {
 "reset": SubResource("Animation_ufxyf")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oxll"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_top = 9.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umv0m"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_top = 9.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q74xx"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_top = 9.0
+expand_margin_bottom = 2.0
+
 [node name="level_transition" type="CanvasLayer"]
 script = ExtResource("1_us5uj")
 
@@ -109,5 +149,14 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="ExitButton" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 40)
+theme_override_fonts/font = ExtResource("3_focx3")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_8oxll")
+theme_override_styles/hover = SubResource("StyleBoxFlat_umv0m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q74xx")
+text = "EXIT"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

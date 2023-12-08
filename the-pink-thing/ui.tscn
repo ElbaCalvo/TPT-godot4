@@ -130,7 +130,7 @@ theme_override_font_sizes/font_size = 43
 theme_override_styles/normal = SubResource("StyleBoxFlat_0vwcr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v7k7n")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1kucw")
-text = "NEW GAME"
+text = "START"
 
 [node name="Settings" type="Button" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2

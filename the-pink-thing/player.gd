@@ -22,7 +22,6 @@ func hit(demage : int):
 	health -= demage
 	if (health <= 0):
 		die()
-		queue_free()
 
 func _ready():
 	add_to_group("player_group")
@@ -64,7 +63,7 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, speed)
 		
 		if position.y >= 1400:
-			queue_free()
+			die()
 		
 		update_animations()
 		move_and_slide()
@@ -103,8 +102,9 @@ func start(pos):
 	$CollisionShape2D.disabled = false
 		
 func die():
-	$Character.play("death")
-		
+	get_parent().find_child("game_over_screen").set_title(false)
+	queue_free()
+
 func _on_attack_area_body_entered(body):
 	if body.is_in_group("enemy_group"):
 		if (body is Enemy1):
@@ -128,7 +128,7 @@ func _on_attack_area_body_exited(body):
 
 func attacked_by_enemy():
 	actual_health -= damage
-	get_node("/root/Main/World1/GUI").update_health_value(actual_health)
+	get_parent().find_child("GUI").update_health_value(actual_health)
 
 func gain_diamonds(diamonds_gained : int):
 	diamonds += diamonds_gained

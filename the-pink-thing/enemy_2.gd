@@ -84,7 +84,7 @@ func _on_hit_box_body_entered(body):
 func _on_timer_timeout():
 	if attacking && body_being_attacked!=null:
 		body_being_attacked.hit(damage)
-		get_node("/root/Main/World1/Player").attacked_by_enemy()
+		get_parent().find_child("Player").attacked_by_enemy()
 		print("Centipede hits Player.") 
 
 func _on_hit_box_body_exited(body):

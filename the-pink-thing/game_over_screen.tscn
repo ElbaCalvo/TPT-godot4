@@ -1,0 +1,174 @@
+[gd_scene load_steps=11 format=3 uid="uid://b00o24d2ya4ei"]
+
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_d38sa"]
+[ext_resource type="Texture2D" uid="uid://b7u7nltafj62v" path="res://art/scene/Backgrounds/main_options.png" id="1_r4sfv"]
+[ext_resource type="FontFile" uid="uid://cdoe7bssu3s5s" path="res://fonts/PeaberryBase.ttf" id="3_2b2h2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlkh1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeohl"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vutig"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4g3u"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvg1b"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a86ji"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmv4l"]
+bg_color = Color(0, 0, 0, 0.431373)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+expand_margin_left = 10.0
+expand_margin_top = 9.0
+expand_margin_right = 10.0
+expand_margin_bottom = 2.0
+
+[node name="game_over_screen" type="CanvasLayer"]
+script = ExtResource("1_d38sa")
+
+[node name="MarginMenu" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginMenu"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginMenu/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("1_r4sfv")
+
+[node name="ColorRect" type="ColorRect" parent="MarginMenu/PanelContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.360784)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginMenu/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="Title" type="Label" parent="MarginMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_colors/font_outline_color = Color(0.101961, 0.301961, 0.160784, 1)
+theme_override_constants/outline_size = 35
+theme_override_fonts/font = ExtResource("3_2b2h2")
+theme_override_font_sizes/font_size = 52
+text = "YOU WIN/DIED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginMenu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 37
+
+[node name="HSeparator2" type="HSeparator" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_qlkh1")
+
+[node name="MainMenuButton" type="Button" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2b2h2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_xeohl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vutig")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f4g3u")
+text = "MAIN MENU"
+
+[node name="ExitButton" type="Button" parent="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2b2h2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_uvg1b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a86ji")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rmv4l")
+text = "EXIT"
+
+[connection signal="pressed" from="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MarginMenu/PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
