@@ -33,3 +33,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
+func send_post_new_score(username: String, diamonds: int):
+	if username == null:
+		printerr("Will NOT send POST data with score due to invalid username")
+		printerr("There might have been an error loading user_data file")
+		return
+	var body = JSON.stringify({"username": username, "score": (diamonds*100)})
+	var headers = ["Content-Type: application/json", "Client-Secret: abc"]
+	$HTTPRequest.request("http://127.0.0.1:8000/score", headers, HTTPClient.METHOD_POST, body)
+
+func _on_http_request_request_completed(result, response_code, headers, body):
+	var response = JSON.parse_string(body.get_string_from_utf8())
+	print("Server response:")
+	print(response)

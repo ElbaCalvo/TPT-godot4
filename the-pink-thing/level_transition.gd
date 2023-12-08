@@ -10,4 +10,4 @@ func _on_timer_timeout():
 	if timeout == false:
 		timeout = true
 		$AnimationPlayer.play_backwards("disolve")
-		get_node("/root/Main/World1/Player").can_move = true
+		get_parent().find_child("Player").can_move = true

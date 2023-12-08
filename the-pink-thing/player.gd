@@ -20,7 +20,7 @@ var can_move : bool = true
 
 func hit(demage : int):
 	health -= demage
-	if (health <= 0):
+	if (health < 0):
 		die()
 
 func _ready():
@@ -103,6 +103,7 @@ func start(pos):
 		
 func die():
 	get_parent().find_child("game_over_screen").set_title(false)
+	get_parent().send_post_new_score(SettingsSignalBus.settings["username"], self.diamonds)
 	queue_free()
 
 func _on_attack_area_body_entered(body):
@@ -131,5 +132,5 @@ func attacked_by_enemy():
 	get_parent().find_child("GUI").update_health_value(actual_health)
 
 func gain_diamonds(diamonds_gained : int):
-	diamonds += diamonds_gained
+	self.diamonds += diamonds_gained
 	emit_signal("gained_diamonds", diamonds_gained)

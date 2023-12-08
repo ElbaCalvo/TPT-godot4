@@ -11236,7 +11236,7 @@ layer_2/tile_data = PackedInt32Array(1507498, 720898, 8, 1507499, 720898, 8, 150
 [node name="GUI" parent="." instance=ExtResource("5_k57n5")]
 
 [node name="Player" parent="." instance=ExtResource("1_ouioa")]
-position = Vector2(5346, 655)
+position = Vector2(332, -428)
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2(1, 0)
@@ -11421,7 +11421,7 @@ position = Vector2(394, -114)
 position = Vector2(2808, -188)
 
 [node name="Marker2D_3" type="Marker2D" parent="HeartSpawner"]
-position = Vector2(1454, 431)
+position = Vector2(1386, 510)
 
 [node name="Marker2D_4" type="Marker2D" parent="HeartSpawner"]
 position = Vector2(6620, 199)
@@ -11443,3 +11443,7 @@ stream = ExtResource("24_6v2wa")
 bus = &"Music"
 
 [node name="game_over_screen" parent="." instance=ExtResource("25_df1po")]
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
